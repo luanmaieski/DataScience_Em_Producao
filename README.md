@@ -14,6 +14,11 @@ As vendas da loja são influenciadas por muitos fatores, incluindo promoções, 
 
 asdfasdfasdfasfd
 
+| Atributo | Definição | 
+| -------- | -------- | 
+| Dado 1A  | Dado 2A  | 
+| Dado 1B  | Dado 2B  | 
+
 # Estratégia da Solução
 
 A estratégia para resolver esse problema se baseia na metodologia CRISP-DS
@@ -30,4 +35,8 @@ Os passos no primeiro ciclo foram os seguintes:
 
 5. Modelagem dos Dados: Nesta etapa são feitas as transformações necessarias antes de treinar o modelo, como encoding, reescaling e transformação de natureza das variáveis. Também é feita a seleção das features mais relevantes para o modelo e é feita a divisão do dataset entre treino e teste.
 
-6. Algoritmos de Machine Learning: Nesta etapa são aplicados os algoritmos de Machine Learning nos dados preparados. Aqui o
+6. Algoritmos de Machine Learning: Nesta etapa são aplicados os algoritmos de Machine Learning nos dados preparados. Aqui é feito a comparação de performance entre os algoritmos e escolhido o melhor. Com o algoritmo escolhido é feita a escolha dos melhores hiperparametros para que o algritmo fique com uma performance maior e pronto para ser colocado em produção.
+
+7. Avaliação do algoritmo:  Nesta etapa e feita a tradução e interpretação do erro, onde é avaliado se a performance é aceitável para por em produção, caso contrário começa um novo ciclo buscando melhorias.
+
+8. Modelo em produção: Nesta etapa o modelo é colocado em produção podendo ser acessado pelas partes interessadas.  
