@@ -25,7 +25,7 @@ A estratégia para resolver esse problema se baseia na metodologia CRISP-DS
 O método CRISP-DS se baseia na entrega por ciclos, priorizando a entrega rápida e acrescentando melhorias a cada ciclo. 
 Os passos no primeiro ciclo foram os seguintes:
 
-1. Entendimento do Negócio: entender a motivação do time de negócio e a causa raiz do problema, propor o formato de entrega da solução, que no caso será um bot no Telegram que dado a o numero da loja, será retornado a previsão de vendas das proximas 6 semanas.
+1. Entendimento do Negócio: entender a motivação do time de negócio e a causa raiz do problema, propor o formato de entrega da solução, que no caso será um bot no Telegram que dado o número da loja, será retornado a previsão de vendas das proximas 6 semanas.
 
 2. Coleta de Dados: Nesta etapa é feita a coleta de dados do banco de dados da empresa. Para este projeto será feita a importação dos dados em um arquivo .csv vindo da plataforma Kaggle.
 
@@ -40,3 +40,30 @@ Os passos no primeiro ciclo foram os seguintes:
 7. Avaliação do algoritmo:  Nesta etapa e feita a tradução e interpretação do erro, onde é avaliado se a performance é aceitável para por em produção, caso contrário começa um novo ciclo buscando melhorias.
 
 8. Modelo em produção: Nesta etapa o modelo é colocado em produção podendo ser acessado pelas partes interessadas.  
+
+
+# Top 3 Insights
+
+## Mapa de Hipóteses
+O Mindmap foi criado para ajudar a escrever as hipóteses e auxiliar na exploração dos dados.
+![seg imagem readme](img/MindMapHypothesis.png)
+
+# Insights
+Foram selecionadas 12 hipóteses para validação. As 3 principais geraram os insights abaixo:
+## Insight 1:
+## Insight 2:
+## Insight 3:
+
+# Modelos de Machine Learning
+Os 5 algoritmos selecionados para esse projeto foram:
+1. Average Model.
+2. Linear Regression.
+3. Linear Regression Regularized.
+4. Random Forest Regressor.
+5. XGBoost Regressor.
+
+Os resultados de treinamento e teste dos algoritmos foram os seguintes:
+| Atributo | Definição | Atributo | Definição |
+| -------- | -------- | 
+| Dado 1A  | Dado 2A  | 
+| Dado 1B  | Dado 2B  |
