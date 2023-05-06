@@ -63,7 +63,29 @@ Os 5 algoritmos selecionados para esse projeto foram:
 5. XGBoost Regressor.
 
 Os resultados de treinamento e teste dos algoritmos foram os seguintes:
-| Atributo | Definição | Atributo | Definição |
-| -------- | -------- | 
-| Dado 1A  | Dado 2A  | 
-| Dado 1B  | Dado 2B  |
+| Model Name | MAE | MAPE | RMSE |
+| -------- | -------- | -------- | -------- |
+| Random Forest Regressor  | 679.598 | 0.0999  | 1011.119  |
+| XGBoost Regressor  | 868.958 | 0.1303  | 1238.550  |
+| Average Model  | 1354.800  | 0.2064  | 1835.135  |
+| Linear Regression  | 1867.089  | 0.2926  | 2671.049  |
+| Linear Regression - Lasso  | 1891.704  | 0.2891  | 2744.451  |
+Onde MAE=Mean Absolute Error; MAPE=Mean Absolute Percentage Error; RMSE=Root Mean Squared Error.
+
+Aplicando o método de Cross Validation:
+| Model Name | MAE CV | MAPE CV | RMSE CV |
+| -------- | -------- | -------- | -------- |
+| Random Forest Regressor  | 836.61+/- 217.1 | 0.12+/- 0.02  | 1254.3+/- 316.17  |
+| XGBoost Regressor  | 1064.94+/- 178.65 | 0.15+/- 0.02  | 1519.92+/- 242.12  |
+| Linear Regression  | 2081.73+/- 295.63  | 0.3+/- 0.02  | 2952.52+/- 468.37  |
+| Linear Regression - Lasso  | 2116.38+/- 341.5  | 0.29+/- 0.01  | 3057.75+/- 504.26  |
+Apesar de o algoritmo Random Forest Regressor ter apresentado o melhor resultado, para esse projeto foi escolhido o XGBoost Regressor por ser mais rápido e leve e ter um resultado bem próximo ao melhor.
+
+Em seguido foi aplicado a técnica de Random Search para encontrar os melhores hiperparâmetros. O resultado final com os parametros otimizados foi:
+| Model Name | MAE | MAPE | RMSE |
+| -------- | -------- | -------- | -------- |
+| XGBoost Regressor  | 770.209 | 0.1156  | 1108.062  |
+
+
+
+
