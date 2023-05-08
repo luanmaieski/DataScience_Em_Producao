@@ -70,6 +70,7 @@ Os resultados de treinamento e teste dos algoritmos foram os seguintes:
 | Average Model  | 1354.800  | 0.2064  | 1835.135  |
 | Linear Regression  | 1867.089  | 0.2926  | 2671.049  |
 | Linear Regression - Lasso  | 1891.704  | 0.2891  | 2744.451  |
+
 Onde MAE=Mean Absolute Error; MAPE=Mean Absolute Percentage Error; RMSE=Root Mean Squared Error.
 
 Aplicando o método de Cross Validation:
@@ -79,6 +80,7 @@ Aplicando o método de Cross Validation:
 | XGBoost Regressor  | 1064.94+/- 178.65 | 0.15+/- 0.02  | 1519.92+/- 242.12  |
 | Linear Regression  | 2081.73+/- 295.63  | 0.3+/- 0.02  | 2952.52+/- 468.37  |
 | Linear Regression - Lasso  | 2116.38+/- 341.5  | 0.29+/- 0.01  | 3057.75+/- 504.26  |
+
 Apesar de o algoritmo Random Forest Regressor ter apresentado o melhor resultado, para esse projeto foi escolhido o XGBoost Regressor por ser mais rápido e leve e ter um resultado bem próximo ao melhor.
 
 Em seguido foi aplicado a técnica de Random Search para encontrar os melhores hiperparâmetros. O resultado final com os parametros otimizados foi:
@@ -86,6 +88,21 @@ Em seguido foi aplicado a técnica de Random Search para encontrar os melhores h
 | -------- | -------- | -------- | -------- |
 | XGBoost Regressor  | 770.209 | 0.1156  | 1108.062  |
 
+# Resultado de Negócio
+Com o algoritmo escolhido pronto para fazer previsões, as lojas com melhor resultado de previsão para as próximas 6 semanas são as seguintes:
 
+| Loja | Previsões | Pior Cenário | Melhor Cenário | MAE | MAPE | 
+| -------- | -------- | -------- | -------- | -------- | -------- |
+| 562  |	$ 745,088.12  |	$ 744,181.19 |	$745,995.05 |	$ 906.92 |	0.0541 |
+| 667  |	$ 317,574.59  |	$ 317,076.76 |	$318,072.42 |	$ 497.83 |  0.0563 |
+| 1089 |  $ 369,152.90  |	$ 368,546.44 |	$369,759.36 |	$ 606.45 |	0.0567 |
+| 600  |	$ 277,905.75  |	$ 277,499.83 |	$278,311.66 |	$ 405.91 |	0.0571 |
+| 733  |	$ 654,944.56  |	$ 654,105.54 |  $655,783.57 |	$ 839.01 |	0.0572 |
 
-
+## Performance Final
+A soma das previsãoes, do melhor e pior cenários de todas as lojas é a seguinte:
+| Cenário | Valores | 
+| -------- | -------- | 
+| Predições  | $ 285,817,920.00 |
+| Pior Cenário  | $ 284,955,855.73 | 
+| Melhor Cenário  | $ 285,817,784.44 | 
