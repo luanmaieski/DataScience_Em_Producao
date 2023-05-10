@@ -14,7 +14,9 @@ As vendas da loja são influenciadas por muitos fatores, incluindo promoções, 
 - Lojas que não possuíam dados de competidores próximos tiveram o valor da distância atribuido em 200000 metros.
 - Foram considerados para a previsão apenas as lojas que posuíam o valor de vendas superior a 0 e somente os dias em que as lojas estavam abertas.
 - A variável customers foi removida pois não estaria disponível no momento da previsão.
+- Os dados disponíveis das vendas são do período de 01/01/2013 até 31/07/2015
 
+O Dataset apresenta as seguintes features:
 
 | Atributo | Definição | 
 | -------- | -------- | 
@@ -33,7 +35,7 @@ As vendas da loja são influenciadas por muitos fatores, incluindo promoções, 
 | competition_opne_since_month | Indica o mês aproximado em que o concorrente mais próximo foi aberto  |
 | competition_open_since_year  | Indica o ano em que o competidor mais próximo foi aberto  |
 | promo2                       | Indica se a loja está estendendo a promoção: 0 = a loja não está participando, 1 = a loja está participando  |
-| promo2_since_week            | Indica a semana em que a loja começpu a participar da promoção estendida  |
+| promo2_since_week            | Indica a semana em que a loja começou a participar da promoção estendida  |
 | promo2_since_year            | Indica o ano em que a loja começou a participar da promoção estendida |
 | promo_interval               | Descreve os meses em que a loja iniciou a promo2, ex.: "Feb,May,Aug,Nov" significa que a loja iniciou as promoções estendidas em cada um desses meses |
 
@@ -113,7 +115,7 @@ Aplicando o método de Cross Validation:
 
 Apesar de o algoritmo Random Forest Regressor ter apresentado o melhor resultado, para esse projeto foi escolhido o XGBoost Regressor por ser mais rápido e leve e ter um resultado bem próximo ao melhor.
 
-Em seguido foi aplicado a técnica de Random Search para encontrar os melhores hiperparâmetros. O resultado final com os parametros otimizados foi:
+Em seguido foi aplicado a técnica de Random Search para encontrar os melhores hiperparâmetros. O resultado final com os parâmetros otimizados foi:
 | Model Name | MAE | MAPE | RMSE |
 | -------- | -------- | -------- | -------- |
 | XGBoost Regressor  | 770.209 | 0.1156  | 1108.062  |
@@ -141,8 +143,13 @@ O gráfico abaixo mostra como o erro das previsões está distribuido em uma fai
 
 ![performancemapereadme](img/modelperformancemape.png)
 
+# Produto Final
+
+![bottelegram](img/telegrambot1.gif)
+
 # Conclusão
-O objetivo do projeto, que era ter a previsão de vendas das lojas foi cumprido. O CFO agora pode consultar os resultados pelo bot no Telegram aqui
+O objetivo do projeto, que era ter a previsão de vendas das lojas foi cumprido. O CFO agora pode consultar os resultados pelo bot no Telegram [aqui](https://t.me/dsp_rossmann_bot)
+
 Além das previsões, o CFO pode ter novas ideias para melhoria no negócio com os insights apresentados nesse projeto.
 
 # Próximos passos
