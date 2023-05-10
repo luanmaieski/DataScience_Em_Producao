@@ -11,18 +11,39 @@ O CFO da rede Rossmann quer fazer reformas nas lojas e para isso precisa ter uma
 As vendas da loja são influenciadas por muitos fatores, incluindo promoções, concorrência, feriados escolares e estaduais, sazonalidade e localidade. Com milhares de gerentes individuais prevendo vendas com base em suas circunstâncias únicas, a precisão dos resultados pode variar bastante.
 
 # Premissas do Negócio
+- Lojas que não possuíam dados de competidores próximos tiveram o valor da distância atribuido em 200000 metros.
+- Foram considerados para a previsão apenas as lojas que posuíam o valor de vendas superior a 0 e somente os dias em que as lojas estavam abertas.
+- A variável customers foi removida pois não estaria disponível no momento da previsão.
 
-asdfasdfasdfasfd
 
 | Atributo | Definição | 
 | -------- | -------- | 
-| Dado 1A  | Dado 2A  | 
-| Dado 1B  | Dado 2B  | 
+| store                        | Identificador unico de cada loja  | 
+| day_of_week                  | Dia da semana  | 
+| date                         | Data  |
+| sales                        | Número de negócios para um determinado dia 
+| customers                    | O número de clientes em um determinado dia |
+| open                         | Um indicador para saber se a loja estava aberta: 0 = fechada, 1 = aberta  |
+| promo                        | Indica se uma loja está realizando uma promoção naquele dia  |
+| state_holiday                | Indica um feriado de estado. a = feriado público, b = feriado de páscoa, c = natal, 0 = não há feriado |
+| school_holiday               | Indica se a loja estava fechada ou não no feriado escolar |
+| store_type                   | Indica o modelo de loja, que pode ser: a, b, c, d  |
+| assortment                   | Indica o nível de variedade de produtos: a = básico, b = extra, c = estendido  |
+| competition_distance         | Distância em metros para o competidor mais próximo |
+| competition_opne_since_month | Indica o mês aproximado em que o concorrente mais próximo foi aberto  |
+| competition_open_since_year  | Indica o ano em que o competidor mais próximo foi aberto  |
+| promo2                       | Indica se a loja está estendendo a promoção: 0 = a loja não está participando, 1 = a loja está participando  |
+| promo2_since_week            | Indica a semana em que a loja começpu a participar da promoção estendida  |
+| promo2_since_year            | Indica o ano em que a loja começou a participar da promoção estendida |
+| promo_interval               | Descreve os meses em que a loja iniciou a promo2, ex.: "Feb,May,Aug,Nov" significa que a loja iniciou as promoções estendidas em cada um desses meses |
 
 # Estratégia da Solução
 
 A estratégia para resolver esse problema se baseia na metodologia CRISP-DS
 O método CRISP-DS se baseia na entrega por ciclos, priorizando a entrega rápida e acrescentando melhorias a cada ciclo. 
+
+![crisp readme](img/crispdsprod.png)
+
 Os passos no primeiro ciclo foram os seguintes:
 
 1. Entendimento do Negócio: entender a motivação do time de negócio e a causa raiz do problema, propor o formato de entrega da solução, que no caso será um bot no Telegram que dado o número da loja, será retornado a previsão de vendas das proximas 6 semanas.
@@ -50,9 +71,18 @@ O Mindmap foi criado para ajudar a escrever as hipóteses e auxiliar na explora�
 
 # Insights
 Foram selecionadas 12 hipóteses para validação. As 3 principais geraram os insights abaixo:
-## Insight 1:
-## Insight 2:
-## Insight 3:
+
+| Insight 1 - Lojas com competidores mais próximos vendem mais |
+| -------- |
+| ![insight1 readme](img/insight1.png) |
+
+| Insight 2 - Lojas com promoções ativas por mais tempo vendem menos |
+| -------- |
+| ![insight1 readme](img/insight2.png) |
+
+| Insight 3 - Lojas vendem menos durante os feriados escolares |
+| -------- |
+| ![insight1 readme](img/insight3.png) |
 
 # Modelos de Machine Learning
 Os 5 algoritmos selecionados para esse projeto foram:
@@ -100,9 +130,24 @@ Com o algoritmo escolhido pronto para fazer previsões, as lojas com melhor resu
 | 733  |	$ 654,944.56  |	$ 654,105.54 |  $655,783.57 |	$ 839.01 |	0.0572 |
 
 ## Performance Final
-A soma das previsãoes, do melhor e pior cenários de todas as lojas é a seguinte:
+A soma das previsões, do melhor e pior cenários de todas as lojas é a seguinte:
 | Cenário | Valores | 
 | -------- | -------- | 
 | Predições  | $ 285,817,920.00 |
 | Pior Cenário  | $ 284,955,855.73 | 
 | Melhor Cenário  | $ 285,817,784.44 | 
+
+O gráfico abaixo mostra como o erro das previsões está distribuido em uma faixa aceitável, com uma quantidade pequena de previsões com erros maiores.
+
+![performancemapereadme](img/modelperformancemape.png)
+
+# Conclusão
+O objetivo do projeto, que era ter a previsão de vendas das lojas foi cumprido. O CFO agora pode consultar os resultados pelo bot no Telegram aqui
+Além das previsões, o CFO pode ter novas ideias para melhoria no negócio com os insights apresentados nesse projeto.
+
+# Próximos passos
+- Investigar o motivo dos valores faltantes.
+- Criar novas hipóteses e extrair mais insights
+- Criar novas features que ajudem na previsão do modelo
+- Testar algoritmos de Machine Learning diferentes
+- Disponibilizar a solução final com mais detalhes.
